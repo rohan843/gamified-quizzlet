@@ -1,5 +1,4 @@
 import TopNav from "./TopNav";
-import robotImage from "../../assets/image 1.png";
 import Robot from "../../components/Robot";
 
 function WelcomePage() {
