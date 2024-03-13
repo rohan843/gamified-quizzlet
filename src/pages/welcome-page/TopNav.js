@@ -1,4 +1,4 @@
-import GetStartedButton from "./GetStartedButton";
+import GetStartedButton from "../../components/GetStartedButton";
 
 function TopNav() {
   return (
