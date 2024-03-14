@@ -60,11 +60,66 @@ function ProfileView() {
                 alt=""
                 className="h-[90px] w-[90px] object-cover"
               />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="grow h-full"></div>
+      <div className="grow h-full flex flex-col items-center p-5 overflow-auto">
+        <img
+          src="https://picsum.photos/200/300"
+          alt=""
+          className="h-[200px] w-[200px] object-cover rounded-lg"
+        />
+        <h1 className="text-[30px] mt-3 mb-1">ABC DEFGH</h1>
+        <p className="text-[18px] text-[#b1b1b1] mb-10">abcd@example.com</p>
+        <div className="w-[70%] h-max">
+          <h2 className="w-full text-[18px] mb-3">Change Password:</h2>
+          <input
+            type="password"
+            placeholder="Old Password"
+            className="w-full h-[40px] rounded-[12px] border-2 border-black mb-3 p-4"
+          />
+          <input
+            type="password"
+            placeholder="New Password"
+            className="w-full h-[40px] rounded-[12px] border-2 border-black mb-3 p-4"
+          />
+        </div>
+        <button
+          style={{
+            WebkitBoxShadow: "4px 4px 0px 0px rgba(208, 95, 32, 0.25)",
+            boxShadow: "4px 4px 0px 0px rgba(208, 95, 32, 0.25)",
+          }}
+          className="rounded-[12px] bg-[#D05F20] min-w-[140px] min-h-[40px] text-[18px] text-white"
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 }
