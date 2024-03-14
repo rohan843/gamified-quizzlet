@@ -1,8 +1,9 @@
+import SignUpPage from "./pages/signup-page/SignUpPage";
 import LoginPage from "./pages/login-page/LoginPage";
-import WelcomePage from "./pages/welcome-page/WelcomePage";
+
 
 function App() {
-  return <LoginPage />;
+  return <LoginPage/>
 }
 
 export default App;

@@ -50,33 +50,51 @@ body,
   text-shadow: 2px 2px 0px rgba(46, 123, 21, 0.22);
 }
 
-.loginRectangle{
+.signupRectangle{
   width: 474px;
   height: 433px;
   border-radius: 24px;
   background-color: #EDF6F9;
-  position: absolute;
+  border : 1px solid  black  
+  
+  /* position: absolute;
     top: 60px;
     bottom: 0;
     left: 0;
     right: 0;
     
-    margin: auto;
+  margin: auto;*/
 }
 
-.formElement{
+.loginRectangle{
+  width: 474px;
+  height: 277px;
+  border-radius: 24px;
+  background-color: #EDF6F9;
+  border : 1px solid  black  
+  
+  /* position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+  margin: auto;*/
+}
+
+/* .formElement{
   border-radius: 4px;
   border-color: black;
   width: max-content;
   height: max-content;
-}
+} */
 
-#name,#email,#password,#re-password {
-  border-radius: 4px;
-  border-color: black;
+/* #name,#email,#password,#re-password {
+  
+  
   align-items: center;
-  width: 358px;
-  height: 48px;
+  
 
 
-}
+} */
+
