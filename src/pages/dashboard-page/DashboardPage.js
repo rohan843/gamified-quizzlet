@@ -3,8 +3,8 @@ import { ReactComponent as Gold } from "../../assets/gold.svg";
 import { ReactComponent as Heart } from "../../assets/heart.svg";
 import ExploreButton from "./ExploreButton";
 import FlashcardsButton from "./FlashcardsButton";
+import FlashcardsView from "./FlashcardsView";
 import LeaderboardButton from "./LeaderboardButton";
-import LeaderboardView from "./LeaderboardView";
 import ProfileButton from "./ProfileButton";
 
 function DashboardPage({ streak, gold, lifelines }) {
@@ -33,11 +33,11 @@ function DashboardPage({ streak, gold, lifelines }) {
         <div className="w-max h-full p-5 border-r flex flex-col">
           <ExploreButton />
           <ProfileButton />
-          <LeaderboardButton active />
-          <FlashcardsButton />
+          <LeaderboardButton />
+          <FlashcardsButton active />
         </div>
         <div className="grow h-full overflow-y-auto">
-          <LeaderboardView />
+          <FlashcardsView />
         </div>
       </div>
     </div>
