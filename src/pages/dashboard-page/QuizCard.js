@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import { ReactComponent as Timer } from "../../assets/timer.svg";
 
-function QuizCard({ img, name, quesCount, level, timed }) {
+function QuizCard({ img, name, quesCount, level, timed, duration }) {
   return (
-    <div className="w-full min-h-[80px] flex flex-row items-center quiz-card px-3 py-1 my-3 justify-between">
+    <div className="w-full min-h-[80px] flex flex-row items-center quiz-card px-3 py-1 my-3 justify-between relative overflow-hidden">
       <div className="w-max h-full flex flex-row items-center">
         <img
           src={img}

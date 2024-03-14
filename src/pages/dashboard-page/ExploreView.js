@@ -28,6 +28,7 @@ function ExploreView() {
         quesCount={20}
         level="medium"
         timed
+        duration={20}
       />
       <QuizCard
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmSGjet8_p422wEQsNKkjLLuzVNEG07I-5Q&usqp=CAU"
@@ -35,6 +36,7 @@ function ExploreView() {
         quesCount={10}
         level="easy"
         timed
+        duration={20}
       />
       <QuizCard
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmSGjet8_p422wEQsNKkjLLuzVNEG07I-5Q&usqp=CAU"
@@ -48,6 +50,7 @@ function ExploreView() {
         quesCount={20}
         level="medium"
         timed
+        duration={20}
       />
       <QuizCard
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmSGjet8_p422wEQsNKkjLLuzVNEG07I-5Q&usqp=CAU"
@@ -55,6 +58,7 @@ function ExploreView() {
         quesCount={10}
         level="easy"
         timed
+        duration={20}
       />
       <QuizCard
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfmSGjet8_p422wEQsNKkjLLuzVNEG07I-5Q&usqp=CAU"
