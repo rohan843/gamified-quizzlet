@@ -2,8 +2,8 @@ function ProfileView() {
   return (
     <div className="flex flex-row h-full w-full">
       <div className="w-[60%] h-full border-r overflow-auto">
-        <div className="flex flex-col w-full">
-          <div className="flex flex-row w-full my-12">
+        <div className="flex flex-col w-full p-5">
+          <div className="flex flex-row w-full mt-7 mb-12">
             <div className="grow flex flex-row justify-center items-center">
               <div
                 className="flex flex-col rounded-full w-[130px] h-[130px] items-center justify-center"
@@ -27,7 +27,41 @@ function ProfileView() {
               </span>
             </div>
           </div>
-          <div></div>
+          <div className="w-full bg-[#EDF6F9] shadow-xl rounded-[24px] p-7">
+            <h1 className="text-[30px] text-[#900101] mb-4">Badges Earned</h1>
+            <div className="grid grid-cols-3 justify-items-center gap-4">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png"
+                alt=""
+                className="h-[90px] w-[90px] object-cover"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="grow h-full"></div>
