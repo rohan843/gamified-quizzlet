@@ -83,3 +83,23 @@ body,
   line-height: 24px;
   color: #EE0404;
 }
+
+.explore-button {
+  border: 2px solid #EE0404;
+  border-radius: 12px;
+}
+
+.leaderboard-button {
+  border: 2px solid #D05F20;
+  border-radius: 12px;
+}
+
+.profile-button {
+  border: 2px solid #FFBF00;
+  border-radius: 12px;
+}
+
+.flashcards-button {
+  border: 2px solid #1234E9;
+  border-radius: 12px;
+}

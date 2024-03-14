@@ -1,6 +1,10 @@
 import { ReactComponent as Fire } from "../../assets/fire.svg";
 import { ReactComponent as Gold } from "../../assets/gold.svg";
 import { ReactComponent as Heart } from "../../assets/heart.svg";
+import ExploreButton from "./ExploreButton";
+import FlashcardsButton from "./FlashcardsButton";
+import LeaderboardButton from "./LeaderboardButton";
+import ProfileButton from "./ProfileButton";
 
 function DashboardPage({ streak, gold, lifelines }) {
   return (
@@ -19,9 +23,14 @@ function DashboardPage({ streak, gold, lifelines }) {
           <span className="lifelines-number">{lifelines}</span>
         </div>
       </div>
-      <div>
-        <div></div>
-        <div></div>
+      <div className="grow flex flex-row">
+        <div className="w-max p-10 border-r flex flex-col">
+          <ExploreButton />
+          <ProfileButton />
+          <LeaderboardButton />
+          <FlashcardsButton />
+        </div>
+        <div className="grow"></div>
       </div>
     </div>
   );
