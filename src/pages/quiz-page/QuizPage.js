@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ReactComponent as Heart } from "../../assets/HeartIcon.svg";
-import Robot from "../../assets/image 1.png";
+import Robot from "../../assets/image1.png";
 import Navbar from "./Navbar";
 import HeartModal from "../../components/HeartModal";
 

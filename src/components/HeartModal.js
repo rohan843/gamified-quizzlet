@@ -1,5 +1,5 @@
 import React from 'react'
-import Robot from "../assets/image 1.png";
+import Robot from "../assets/image1.png";
 import Gold from "../assets/Gold.png"
 
 

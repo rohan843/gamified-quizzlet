@@ -2,10 +2,12 @@ import FlashCardDiscoveredModal from "./components/FlashCardDiscoveredModal";
 import FlashCardModal from "./components/FlashCardModal";
 import DashboardPage from "./pages/dashboard-page/DashboardPage";
 import QuizEnd from "./pages/quiz-end-page/QuizEnd";
+import QuizPage from "./pages/quiz-page/QuizPage";
+
 
 function App() {
-  
-  return <DashboardPage streak={2} gold={500} lifelines={5} />;
+
+  return <QuizPage />;
   //   const flashcard = {
   //      img: "image1.png",
   //      title: "Flashcard title",
