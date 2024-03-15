@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ReactComponent as Heart } from "../../assets/HeartIcon.svg";
 import Robot from "../../assets/image 1.png";
 import Navbar from "./Navbar";
+import HeartModal from "../../components/HeartModal";
 
 export default function QuizPage({minutes,seconds,correctOption}) {
 
@@ -10,7 +11,7 @@ export default function QuizPage({minutes,seconds,correctOption}) {
      const [showCheckDiv, setShowCheckDiv] = useState(true)
      const [showAnsDiv,setShowAnsDiv] = useState(false)
      const [progressBar,setProgressBar] = useState(0);
-     const [heartCnt,setHeartCnt] = useState(5)
+     const [heartCnt,setHeartCnt] = useState(1)
      const [expressionText,setExpressionText] = useState("")
 
 
@@ -20,8 +21,10 @@ export default function QuizPage({minutes,seconds,correctOption}) {
   };
   const handleCheckClick=()=>{
     if(selectedOption!==correctOption){
-       setHeartCnt((heartCnt)=>heartCnt-1)
+       setHeartCnt((heartCnt)=>Math.max(heartCnt-1,0))
+       console.log(heartCnt);
        setExpressionText("Oops!! Wrong Answer")
+       
     }else {
       setExpressionText("Well Done!! Correct Answer")
     }
@@ -29,7 +32,7 @@ export default function QuizPage({minutes,seconds,correctOption}) {
     setCheckButtonActive(false)
     setShowAnsDiv(true)
     setShowCheckDiv(false)
-    setCheckSelectedOption(true)
+    
     
   }
 
@@ -37,10 +40,15 @@ export default function QuizPage({minutes,seconds,correctOption}) {
     setShowCheckDiv(true)
     setShowAnsDiv(false)
     setSelectedOption(null)
-    setCheckSelectedOption(false)
+    
   }
   return (
+    <>
+    
     <div className="flex flex-col h-full w-full">
+    <div>
+      {heartCnt==0 && <HeartModal/>}
+    </div>
       <Navbar title="Science Quiz 1" minutes={minutes} seconds={seconds} />
 
       <div className="w-full h-full overflow-y-auto overflow-x-hidden grow p-4">
@@ -136,5 +144,8 @@ export default function QuizPage({minutes,seconds,correctOption}) {
        
     </div>
     </div>
+    
+    </>
   );
+  
 }
