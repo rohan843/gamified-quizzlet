@@ -4,10 +4,10 @@ import { ReactComponent as Gold } from "../../assets/gold.svg";
 import { ReactComponent as Heart } from "../../assets/heart.svg";
 import FlashCardModal from "../../components/FlashCardModal";
 import ExploreButton from "./ExploreButton";
+import ExploreView from "./ExploreView";
 import FlashcardsButton from "./FlashcardsButton";
 import LeaderboardButton from "./LeaderboardButton";
 import ProfileButton from "./ProfileButton";
-import ProfileView from "./ProfileView";
 
 function DashboardPage({ streak, gold, lifelines }) {
   const [trigger,setTrigger] = useState(false);
@@ -40,13 +40,13 @@ function DashboardPage({ streak, gold, lifelines }) {
       </div>
       <div className="flex flex-row">
         <div className="w-max h-full p-5 border-r flex flex-col">
-          <ExploreButton />
-          <ProfileButton active />
+          <ExploreButton active />
+          <ProfileButton />
           <LeaderboardButton />
           <FlashcardsButton />
         </div>
         <div className="grow h-full overflow-y-auto">
-          <ProfileView />
+          <ExploreView />
         </div>
       </div>
       {/* <button className="bg-black text-white" onClick={()=>{setTrigger(true)}}>clicksdfa</button> */}

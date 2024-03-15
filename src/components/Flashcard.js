@@ -1,4 +1,5 @@
 function Flashcard({ name, media, text }) {
+
     return (
       <div className="w-full h-[110px] bg-[#EDF6F9] rounded-[12px] flashcard flex flex-row justify-between py-1 px-1 my-3 border border-[#875400] border-[4px]">
         <div className="h-full w-[90%] flex flex-col justify-between">
