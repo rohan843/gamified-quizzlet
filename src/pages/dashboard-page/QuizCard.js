@@ -1,9 +1,18 @@
 import classNames from "classnames";
 import { ReactComponent as Timer } from "../../assets/timer.svg";
+import NewQuizModal from "./NewQuizModal";
+import { useState } from "react";
+import { createPortal } from "react-dom";
 
 function QuizCard({ img, name, quesCount, level, timed, duration }) {
+  const [openIntent, setOpenIntent] = useState(false);
   return (
-    <div className="w-full min-h-[80px] flex flex-row items-center quiz-card px-3 py-1 my-3 justify-between relative overflow-hidden">
+    <div
+      className="w-full min-h-[80px] flex flex-row items-center quiz-card px-3 py-1 my-3 justify-between relative overflow-hidden"
+      onClick={() => {
+        setOpenIntent(true);
+      }}
+    >
       <div className="w-max h-full flex flex-row items-center">
         <img
           src={img}
@@ -27,6 +36,18 @@ function QuizCard({ img, name, quesCount, level, timed, duration }) {
           "opacity-0": !timed,
         })}
       />
+      {openIntent &&
+        createPortal(
+          <NewQuizModal
+            onClose={() => setOpenIntent(false)}
+            name={name}
+            quesCount={quesCount}
+            level={level}
+            timed
+            duration={duration}
+          />,
+          document.getElementById("new-quiz-modal")
+        )}
     </div>
   );
 }
