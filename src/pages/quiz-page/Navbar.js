@@ -30,7 +30,7 @@ export default function Navbar(props) {
         </h1>
 
         <div className="flex flex-row justify-center items-center">
-            <h5 className="flex flex-row justify-center items-center">Time Left <Timer minutes={minutes} seconds={seconds}/> mins</h5>
+            <h5 className="flex flex-row justify-center items-center">Time Left :  <Timer minutes={minutes} seconds={seconds}/>   mins</h5>
         </div>
 
 

@@ -4,7 +4,7 @@ import QuizPage from "./pages/quiz-page/QuizPage";
 
 
 function App() {
-  return <QuizPage/>
+  return <QuizPage minutes={1} seconds={10} correctOption='B'/>
 }
 
 export default App;
