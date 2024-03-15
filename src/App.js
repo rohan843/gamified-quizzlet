@@ -1,10 +1,20 @@
-import SignUpPage from "./pages/signup-page/SignUpPage";
-import LoginPage from "./pages/login-page/LoginPage";
-import QuizPage from "./pages/quiz-page/QuizPage";
 
+import FlashCardDiscoveredModal from "./components/FlashCardDiscoveredModal";
+import FlashCardModal from "./components/FlashCardModal";
+import DashboardPage from "./pages/dashboard-page/DashboardPage";
+import QuizEnd from "./pages/quiz-end-page/QuizEnd";
 
 function App() {
-  return <QuizPage minutes={1} seconds={10} correctOption='B'/>
+   return <DashboardPage streak={2} gold={500} lifelines={5} />;
+//   const flashcard = {
+//      img: "image1.png",
+//      title: "Flashcard title",
+//      info: "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem"
+//   }
+//  return <FlashCardModal flashcard={flashcard}/>
+//return <FlashCardDiscoveredModal/>
+  // return <QuizEnd/>
+
 }
 
 export default App;

@@ -54,20 +54,12 @@ body,
 
 }
 
-.signupRectangle{
+.signupRectangle {
   width: 474px;
   height: 433px;
   border-radius: 24px;
   background-color: #EDF6F9;
-  border : 1px solid  black  
-  
-  /* position: absolute;
-    top: 60px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-  margin: auto;*/
+  border: 1px solid black;
 }
 div.scroll {
  
@@ -76,35 +68,110 @@ div.scroll {
   
 }
 
-.loginRectangle{
+.loginRectangle {
   width: 474px;
   height: 277px;
   border-radius: 24px;
   background-color: #EDF6F9;
-  border : 1px solid  black  
-  
-  /* position: absolute;
-    top: 60px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-  margin: auto;*/
+  border: 1px solid black;
 }
 
-/* .formElement{
-  border-radius: 4px;
-  border-color: black;
-  width: max-content;
-  height: max-content;
-} */
+.streak-number {
+  font-size: 20px;
+  line-height: 24px;
+  color: #EE0404;
+}
 
-/* #name,#email,#password,#re-password {
-  
-  
-  align-items: center;
-  
+.gold-number {
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFBF00;
+}
 
+.lifelines-number {
+  font-size: 20px;
+  line-height: 24px;
+  color: #EE0404;
+}
 
-} */
+.explore-button {
+  border: 2px solid #EE0404;
+  border-radius: 12px;
+}
 
+.leaderboard-button {
+  border: 2px solid #D05F20;
+  border-radius: 12px;
+}
+
+.profile-button {
+  border: 2px solid #FFBF00;
+  border-radius: 12px;
+}
+
+.flashcards-button {
+  border: 2px solid #1234E9;
+  border-radius: 12px;
+}
+
+.search-box {
+  border: 1px solid #D9D9D9;
+  border-radius: 12px;
+  height: 50px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 5px 10px;
+}
+
+.search-box::placeholder {
+  font-size: large;
+}
+
+.trending-tag-button {
+  border-radius: 12px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #757171;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px 20px;
+}
+
+.trending-tag-button:hover {
+  background-color: rgba(57, 203, 4, 0.11);
+  padding: 0px 15px;
+  border: 5px solid rgba(57, 203, 4, 0.60);
+}
+
+.quiz-card {
+  user-select: none;
+  border: 2px solid #717070;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.quiz-card:hover {
+  -webkit-box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.5);
+  transition: 200ms;
+}
+
+.leaderboard-table {
+  grid-template-columns: 1fr 3fr 4fr 4fr;
+  border: 5px solid rgba(57, 203, 4, 0.6);
+  border-radius: 24px;
+}
+
+.flashcard {
+  border: 5px solid rgba(135, 83, 0, 0.7);
+  box-shadow: 2px 2px rgba(208, 94, 32, 0.25);
+  user-select: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.flashcard:hover {
+  box-shadow: 10px 10px rgba(208, 94, 32, 0.25);
+  transition: 200ms;
+}
