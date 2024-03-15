@@ -2,10 +2,70 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
+import WelcomePage from "./pages/welcome-page/WelcomePage";
+import LoginPage from "./pages/login-page/LoginPage";
+import SignUpPage from "./pages/signup-page/SignUpPage";
+import DashboardPage from "./pages/dashboard-page/DashboardPage";
+import ExploreView from "./pages/dashboard-page/ExploreView";
+import LeaderboardView from "./pages/dashboard-page/LeaderboardView";
+import ProfileView from "./pages/dashboard-page/ProfileView";
+import FlashcardsView from "./pages/dashboard-page/FlashcardsView";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <WelcomePage/>,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/signup",
+    element: <SignUpPage />,
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardPage />,
+    children: [
+      {
+        path: "explore",
+        element: <ExploreView />,
+      },
+      {
+        path: "leaderboard",
+        element: <LeaderboardView/>,
+      },
+      {
+        path: "profile",
+        element: <ProfileView />,
+      },
+      {
+        path: "flashcards",
+        element: <FlashcardsView />,
+      },
+      {
+        path: "*",
+        element: <ExploreView/>,
+      },
+    ],
+  },
+  {
+    path: "/quiz/:quiz_id",
+    element: <div>Quiz Page</div>,
+  },
+  {
+    path: "/quiz/:quiz_id/end",
+    element: <div>Quiz End Page</div>,
+  },
+
+
+
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

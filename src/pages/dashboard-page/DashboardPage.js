@@ -9,6 +9,7 @@ import FlashcardsButton from "./FlashcardsButton";
 import LeaderboardButton from "./LeaderboardButton";
 import ProfileButton from "./ProfileButton";
 import FlashcardsView from "./FlashcardsView";
+import { Outlet } from "react-router-dom";
 
 function DashboardPage({ streak, gold, lifelines }) {
   const [trigger, setTrigger] = useState(false);
@@ -51,7 +52,7 @@ function DashboardPage({ streak, gold, lifelines }) {
           <FlashcardsButton />
         </div>
         <div className="grow h-full overflow-y-auto">
-          <FlashcardsView />
+          <Outlet/>
         </div>
       </div>
       {/* <button className="bg-black text-white" onClick={()=>{setTrigger(true)}}>clicksdfa</button> */}
