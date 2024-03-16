@@ -1,16 +1,23 @@
 import { useState } from "react";
 import FlashCardDiscoveredModal from "./FlashCardDiscoveredModal";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveFlashcard } from "../store/slices/userSlice";
 
-export default function FlashCardModal({ flashcard, trigger, setTrigger }) {
+export default function FlashCardModal() {
+  const dispatch = useDispatch();
   const [discover, setDiscover] = useState(true);
+  const { activeFlashcardIndex, flashcards } = useSelector(
+    (store) => store.user
+  );
+  const flashcard = flashcards[activeFlashcardIndex || 0];
   return (
     <>
-      {trigger && (
+      {(activeFlashcardIndex || activeFlashcardIndex === 0) && (
         <div>
           <div className="bg-black bg-opacity-80 text-white flex justify-center z-50 fixed top-0 left-0 w-full h-full">
             <button
               onClick={() => {
-                setTrigger(false);
+                dispatch(setActiveFlashcard(null));
               }}
               className="fixed top-3 right-3"
             >
@@ -32,18 +39,18 @@ export default function FlashCardModal({ flashcard, trigger, setTrigger }) {
             <div className="mt-8">
               <div className="flex justify-center">
                 <img
-                  src={require(`../assets/${flashcard.img}`)}
+                  src={flashcard.img}
                   alt=""
                   className="max-h-[200px] min-w-[200px]"
                 ></img>
               </div>
               <div className="mt-4 bg-[#8D431A] border-[#643013] rounded-[24px] border-8">
                 <div className="text-center pb-2 pt-2 text-3xl">
-                  {flashcard.title}
+                  {flashcard.name}
                 </div>
                 {/* <div></div>  {flashcard.info}*/}
                 <div className="max-w-3xl whitespace-normal break-words p-6">
-                  {flashcard.info}
+                  {flashcard.text}
                 </div>
               </div>
             </div>
