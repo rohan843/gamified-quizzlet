@@ -1,4 +1,5 @@
 import Flashcard from "../../components/Flashcard";
+import {Link} from "react-router-dom"
 
 export default function QuizEnd({quiz}) {
 
@@ -22,8 +23,17 @@ export default function QuizEnd({quiz}) {
                             you are among the top 85% of students who attempted this quiz.
                         </div>
                         <div className="flex justify-between mb-[40px]">
-                            <div className="bg-[#F5B54C] border border-black rounded-2xl px-2 text-xl">Quiz Review</div>
-                            <div className="bg-[#F5B54C] border border-black rounded-2xl px-2 text-xl">return to dashboard</div>
+                            <div>
+                                
+                                <button className="bg-[#F5B54C] border border-black rounded-2xl px-2 text-xl">Quiz Review</button>
+                                
+                                </div>
+                            <div>
+                            <Link to={"/dashboard/explore"}>
+                                <button className="bg-[#F5B54C] border border-black rounded-2xl px-2 text-xl">return to dashboard</button>
+                            </Link>
+                            </div>
+                            
                         </div>
                         <div className="text-center text-4xl text-[#643013]">
                             similar quizzes

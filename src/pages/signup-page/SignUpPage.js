@@ -1,5 +1,6 @@
 import Signup from "../../components/Signup";
 import NavBar from "./NavBar";
+import {Link} from "react-router-dom"
 
 function SignUpPage() {
   return (
@@ -36,8 +37,9 @@ function SignUpPage() {
               />
             </div>
           </form>
-          
+           <Link to={"/dashboard/explore"}>
             <Signup/>
+            </Link>
           
         </div>
       </div>

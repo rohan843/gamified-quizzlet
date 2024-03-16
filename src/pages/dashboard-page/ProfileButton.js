@@ -1,6 +1,7 @@
 import classNames from "classnames";
 
 function ProfileButton({ active, onClick }) {
+  
   return (
     <button
       className={classNames("w-[280px] text-[50px] border profile-button mt-5", {

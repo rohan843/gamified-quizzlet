@@ -9,15 +9,33 @@ import FlashcardsButton from "./FlashcardsButton";
 import LeaderboardButton from "./LeaderboardButton";
 import ProfileButton from "./ProfileButton";
 import FlashcardsView from "./FlashcardsView";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function DashboardPage({ streak, gold, lifelines }) {
+function DashboardPage() {
+  const { streak, gold, lifelines } = useSelector((store) => store.user);
   const [trigger, setTrigger] = useState(false);
   const [flashCard, setFlashCard] = useState({
     img: "image2.png",
     title: "Flashcard title",
     info: "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
   });
+  function initialValue() {
+    if (window.location.pathname === "/dashboard/profile") {
+      return 1;
+    } else if (window.location.pathname === "/dashboard/leaderboard") {
+      return 2;
+    } else if (window.location.pathname === "/dashboard/flashcards") {
+      return 3;
+    } else {
+      return 0;
+    }
+  }
+  const [currentButton, setCurrentButton] = useState(initialValue());
+
+  function onClickCurrentButton(val) {
+    setCurrentButton(val);
+  }
   return (
     <div
       className="w-full h-full grid grid-cols-1"
@@ -46,13 +64,35 @@ function DashboardPage({ streak, gold, lifelines }) {
       </div>
       <div className="flex flex-row">
         <div className="w-max h-full p-5 border-r flex flex-col">
-          <ExploreButton active />
-          <ProfileButton />
-          <LeaderboardButton />
-          <FlashcardsButton />
+          {console.log(window.location.pathname)}
+          <Link to={"/dashboard/explore"}>
+            <ExploreButton
+              active={currentButton === 0}
+              onClick={() => onClickCurrentButton(0)}
+            />
+          </Link>
+
+          <Link to={"/dashboard/profile"}>
+            <ProfileButton
+              active={currentButton === 1}
+              onClick={() => onClickCurrentButton(1)}
+            />
+          </Link>
+          <Link to={"/dashboard/leaderboard"}>
+            <LeaderboardButton
+              active={currentButton === 2}
+              onClick={() => onClickCurrentButton(2)}
+            />
+          </Link>
+          <Link to={"/dashboard/flashcards"}>
+            <FlashcardsButton
+              active={currentButton === 3}
+              onClick={() => onClickCurrentButton(3)}
+            />
+          </Link>
         </div>
         <div className="grow h-full overflow-y-auto">
-          <Outlet/>
+          <Outlet />
         </div>
       </div>
       {/* <button className="bg-black text-white" onClick={()=>{setTrigger(true)}}>clicksdfa</button> */}
