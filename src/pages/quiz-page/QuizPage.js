@@ -12,7 +12,7 @@ export default function QuizPage({minutes,seconds,correctOption}) {
      const [showCheckDiv, setShowCheckDiv] = useState(true)
      const [showAnsDiv,setShowAnsDiv] = useState(false)
      const [progressBar,setProgressBar] = useState(0);
-     const [heartCnt,setHeartCnt] = useState(1)
+     const [heartCnt,setHeartCnt] = useState(5)
      const [expressionText,setExpressionText] = useState("")
 
      const {quiz_id} = useParams()
