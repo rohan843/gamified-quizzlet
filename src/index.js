@@ -13,6 +13,8 @@ import FlashcardsView from "./pages/dashboard-page/FlashcardsView";
 import QuizPage from "./pages/quiz-page/QuizPage";
 import QuizEnd from "./pages/quiz-end-page/QuizEnd";
 import Robot from "./components/Robot";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
   {
@@ -66,9 +68,12 @@ const router = createBrowserRouter([
     element: <QuizEnd/>,
   },
 ]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
