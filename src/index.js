@@ -11,6 +11,7 @@ import LeaderboardView from "./pages/dashboard-page/LeaderboardView";
 import ProfileView from "./pages/dashboard-page/ProfileView";
 import FlashcardsView from "./pages/dashboard-page/FlashcardsView";
 import QuizPage from "./pages/quiz-page/QuizPage";
+import QuizPage from "./pages/quiz-end-page/QuizEnd";
 import Robot from "./components/Robot";
 import { store } from "./store";
 import { Provider } from "react-redux";
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/quiz/:quiz_id/end",
-    element: <div>Quiz End Page</div>,
+    element: <QuizEnd/>,
   },
 ]);
 

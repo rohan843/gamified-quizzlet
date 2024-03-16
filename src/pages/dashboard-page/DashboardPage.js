@@ -9,7 +9,7 @@ import FlashcardsButton from "./FlashcardsButton";
 import LeaderboardButton from "./LeaderboardButton";
 import ProfileButton from "./ProfileButton";
 import FlashcardsView from "./FlashcardsView";
-import { Outlet } from "react-router-dom";
+import { Outlet , Link} from "react-router-dom";
 
 function DashboardPage({ streak, gold, lifelines }) {
   const [trigger, setTrigger] = useState(false);
@@ -18,6 +18,10 @@ function DashboardPage({ streak, gold, lifelines }) {
     title: "Flashcard title",
     info: "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
   });
+  const [currentButton,setCurrentButton]=useState(null)
+  function onClickCurrentButton(val){
+    setCurrentButton(val);
+  }
   return (
     <div
       className="w-full h-full grid grid-cols-1"
@@ -46,10 +50,21 @@ function DashboardPage({ streak, gold, lifelines }) {
       </div>
       <div className="flex flex-row">
         <div className="w-max h-full p-5 border-r flex flex-col">
-          <ExploreButton active />
-          <ProfileButton />
-          <LeaderboardButton />
-          <FlashcardsButton />
+        {console.log(window.location.pathname)}
+          <Link to={"/dashboard/explore"}>
+          
+          <ExploreButton active ={currentButton===0} onClick={()=>onClickCurrentButton(0)}/>
+          </Link>
+          
+           <Link to={"/dashboard/profile"}>
+          <ProfileButton active ={currentButton===1} onClick={()=>onClickCurrentButton(1)}/>
+          </Link>
+          <Link to={"/dashboard/leaderboard"} >
+          <LeaderboardButton active ={currentButton===2} onClick={()=>onClickCurrentButton(2)}/>
+          </Link>
+          <Link to={"/dashboard/flashcards"}>
+          <FlashcardsButton active ={currentButton===3} onClick={()=>onClickCurrentButton(3)}/>
+          </Link>
         </div>
         <div className="grow h-full overflow-y-auto">
           <Outlet/>

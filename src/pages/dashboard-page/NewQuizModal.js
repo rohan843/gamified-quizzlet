@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import {Link} from "react-router-dom"
 
 function NewQuizModal({ onClose, name, quesCount, level, timed, duration }) {
   return (
@@ -30,9 +31,12 @@ function NewQuizModal({ onClose, name, quesCount, level, timed, duration }) {
         </div>
         {timed && <span>{duration} mins</span>}
         <div className="flex flex-row mt-4">
+          
+          <Link to="/quiz/:quiz_id">
           <button className="p-3 mr-3 h-[50px] rounded-[12px] bg-green-700 text-white">
             Start Quiz
           </button>
+          </Link>
           <button
             className="p-3 ml-3 h-[50px] rounded-[12px] border border-green-700"
             onClick={onClose}
