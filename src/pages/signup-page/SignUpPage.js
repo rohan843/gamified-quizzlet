@@ -1,7 +1,7 @@
 import Signup from "../../components/Signup";
 import NavBar from "./NavBar";
 
-function LoginPage() {
+function SignUpPage() {
   return (
     <div className="w-full h-full flex flex-col">
       <NavBar />
@@ -46,4 +46,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default SignUpPage;
