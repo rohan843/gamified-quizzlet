@@ -21,12 +21,10 @@ const questionSchema = new Schema({
     multimedia: multimediaSchema,
   });
 
-const badgeSchema = new Schema({
-    questions_array: [questionSchema],
-    time_dur_mins: Number,
-    name: String,
-    image: multimediaSchema
-});
+  const badgeSchema = new Schema({
+    badgeImage: multimediaSchema
+   });
+   
 
 const userSchema = new Schema({
 
