@@ -1,36 +1,28 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function ProfileView() {
-  const easyQuizzes = 30;
-  const mediumQuizzes = 40;
-  const hardQuizzes = 80;
-  const totalQuizzes = 400;
-  const questions = 300;
-
-  const badgeImages = [
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Badge-150755_640.png",
-  ].map((image) => (
-    <img src={image} alt="badge" className="h-[90px] w-[90px] object-cover" />
-  ));
-
-  const profilePic = "https://picsum.photos/200/300";
-  const name = "ABC DEFGH";
-  const email = "abcd@example.com";
+  const {
+    easyQuizzes,
+    mediumQuizzes,
+    hardQuizzes,
+    totalQuizzes,
+    questions,
+    badgeImages,
+    profilePic,
+    name,
+    email,
+  } = useSelector((store) => store.user);
   const [oldPwd, setOldPwd] = useState("");
   const [newPwd, setNewPwd] = useState("");
 
   const handlePasswordChange = () => {
     alert("Password Changed Successfully!");
   };
+
+  const badgeImageJSX = badgeImages.map((image) => (
+    <img src={image} alt="badge" className="h-[90px] w-[90px] object-cover" />
+  ));
 
   return (
     <div className="flex flex-row h-full w-full">
@@ -66,7 +58,7 @@ function ProfileView() {
           <div className="w-full bg-[#EDF6F9] shadow-xl rounded-[24px] p-7">
             <h1 className="text-[30px] text-[#900101] mb-4">Badges Earned</h1>
             <div className="grid grid-cols-3 justify-items-center gap-4">
-              {badgeImages}
+              {badgeImageJSX}
             </div>
           </div>
         </div>
