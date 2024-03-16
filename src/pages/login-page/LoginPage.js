@@ -1,5 +1,6 @@
 import LoginButton from "../../components/LoginButton";
 import NavBar from "./NavBar";
+import {Link} from "react-router-dom"
 
 
 function LoginPage(){
@@ -25,14 +26,16 @@ return (
             
           </form>
           
+          <Link to={"/dashboard/explore"}>
           <LoginButton/>
+          </Link>
           
             
           
         </div>
       </div>
       <span className="mt-[5px]">
-            New User? < a href="src/pages/signup-page/SignUpPage.js" className="underline">SIGN UP HERE</a>
+            New User? <Link to={"/signup"}><u>SIGN UP HERE</u></Link>
           </span>
       </div>
       

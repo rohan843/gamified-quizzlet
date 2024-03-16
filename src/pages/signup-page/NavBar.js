@@ -1,4 +1,5 @@
 import LoginButton from "../../components/LoginButton";
+import {Link} from "react-router-dom"
 
 function NavBar() {
   return (
@@ -6,7 +7,9 @@ function NavBar() {
       <h1 className="text-[#2B7B0F] text-[40px] ml-[10px]">
         Gamified Quizzlet
       </h1>
+      <Link to={"/login"}>
       <LoginButton/>
+      </Link>
     </div>
   );
 }
