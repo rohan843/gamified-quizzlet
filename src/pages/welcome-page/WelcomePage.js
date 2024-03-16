@@ -1,5 +1,6 @@
 import TopNav from "./TopNav";
 import Robot from "../../components/Robot";
+import {Link} from "react-router-dom";
 
 function WelcomePage() {
   return (
@@ -22,10 +23,14 @@ function WelcomePage() {
             </span>
             .
           </p>
-          <button className="w-max h-max get-started-button mb-3 mt-9">
+
+          <Link to={"/signup"}><button className="w-max h-max get-started-button mb-3 mt-9">
             Get Started
           </button>
+          </Link>
+          <Link to={"/login"}>
           <button className="w-max h-max login-button">Login</button>
+          </Link>
         </div>
       </div>
     </div>

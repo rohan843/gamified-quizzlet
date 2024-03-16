@@ -12,6 +12,7 @@ import LeaderboardView from "./pages/dashboard-page/LeaderboardView";
 import ProfileView from "./pages/dashboard-page/ProfileView";
 import FlashcardsView from "./pages/dashboard-page/FlashcardsView";
 import QuizPage from "./pages/quiz-page/QuizPage"
+import QuizEnd from "./pages/quiz-end-page/QuizEnd";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/quiz/:quiz_id/end",
-    element: <div>Quiz End Page</div>,
+    element: <QuizEnd/>,
   },
 
 

@@ -3,6 +3,7 @@ import { ReactComponent as Heart } from "../../assets/HeartIcon.svg";
 import Robot from "../../assets/image1.png";
 import Navbar from "./Navbar";
 import HeartModal from "../../components/HeartModal";
+import {Link,useParams} from "react-router-dom";
 
 export default function QuizPage({minutes,seconds,correctOption}) {
 
@@ -13,6 +14,8 @@ export default function QuizPage({minutes,seconds,correctOption}) {
      const [progressBar,setProgressBar] = useState(0);
      const [heartCnt,setHeartCnt] = useState(1)
      const [expressionText,setExpressionText] = useState("")
+
+     const {quiz_id} = useParams()
 
 
   const handleOptionClick = (option) => {
@@ -49,7 +52,7 @@ export default function QuizPage({minutes,seconds,correctOption}) {
     <div>
       {heartCnt==0 && <HeartModal/>}
     </div>
-      <Navbar title="Science Quiz 1" minutes={minutes} seconds={seconds} />
+      <Navbar title={`Science Quiz ${quiz_id}`} minutes={minutes} seconds={seconds} />
 
       <div className="w-full h-full overflow-y-auto overflow-x-hidden grow p-4">
         <div className="w-full flex flex-row justify-between px-4 mt-[5px]">
@@ -62,7 +65,9 @@ export default function QuizPage({minutes,seconds,correctOption}) {
               {heartCnt}
             </span>
           </div>
+          <Link to={"/quiz/:quiz_id/end"}>
           <button className="get-started-button">QUIT</button>
+          </Link>
         </div>
         <div className="w-full flex flex-col mt-[50px] ml-[60px]">
           <span className="text-[40px]">What is the capital of India?</span>
