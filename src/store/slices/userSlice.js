@@ -23,6 +23,15 @@ const userSlice = createSlice({
     profilePic: "https://picsum.photos/200/300",
     name: "ABC DEFGH",
     email: "abcd@example.com",
+    streak: 30,
+    gold: 100,
+    lifelines: 5,
+    leaderboard: [
+      [3, "Lorem", 40, 26],
+      [1, "Lorem", 40, 26],
+      [2, "Lorem", 40, 26],
+      [4, "Lorem", 40, 26],
+    ],
   },
   reducers: {},
 });
