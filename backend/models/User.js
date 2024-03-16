@@ -1,15 +1,39 @@
 import mongoose from 'mongoose';
-import questionSchema from 'Question.js';
-
+//import multimediaSchema from 'Multimedia.js';
 const { Schema } = mongoose;
-import badgeSchema from 'Badge.js';
+//import badgeSchema from 'Badge.js';
+
+
+const multimediaSchema = new Schema({
+    type: String,
+    content: String
+});
+
+
+const questionSchema = new Schema({
+    question_text:String,
+    option_1:String,
+    option_2:String,
+    option_3:String,
+    option_4:String,
+    correct_option:String,
+    flashcard_id: Number,
+    multimedia: multimediaSchema,
+  });
+
+const badgeSchema = new Schema({
+    questions_array: [questionSchema],
+    time_dur_mins: Number,
+    name: String,
+    image: multimediaSchema
+});
 
 const userSchema = new Schema({
 
     email: String,
     password: String,
     name: String,
-    profileImage: String,
+    profileImage: multimediaSchema,
     lifeLines: Number,
     coins: Number,
     streakLength: Number,
@@ -20,4 +44,6 @@ const userSchema = new Schema({
     badgesArray: [badgeSchema]
 });
 
-module.exports = userSchema;
+
+const userModel= mongoose.model('User', userSchema);
+module.exports = userModel;

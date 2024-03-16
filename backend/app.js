@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
+app.post("/register", (req,res) => {
+   const {name,email,password} = req.body;
+   
+})
+
 app.listen(3001, async () => {
   await mongoose.connect(
     "mongodb+srv://gamified-quizzlet:hexacore@cluster0.jikcljx.mongodb.net/"
