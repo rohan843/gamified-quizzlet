@@ -50,7 +50,7 @@ export default function QuizPage({minutes,seconds,correctOption}) {
     
     <div className="flex flex-col h-full w-full">
     <div>
-      {heartCnt==0 && <HeartModal/>}
+      {heartCnt===0 && <HeartModal/>}
     </div>
       <Navbar title={`Science Quiz ${quiz_id}`} minutes={minutes} seconds={seconds} />
 
@@ -122,7 +122,7 @@ export default function QuizPage({minutes,seconds,correctOption}) {
      <div className="w-full bg-white flex flex-row justify-between border-t h-max p-4">
       {showCheckDiv && (
       <div className="w-full flex flex-row justify-between px-10 bg-white">
-        <button className={`w-[348px] h-[70px] bg-[#D9D9D9] rounded-xl mt-[5px] text-[40px] text-[#B1B1B1] skip-shadow ${showAnsDiv==true?'opacity-0':''}`}>
+        <button className={`w-[348px] h-[70px] bg-[#D9D9D9] rounded-xl mt-[5px] text-[40px] text-[#B1B1B1] skip-shadow ${showAnsDiv===true?'opacity-0':''}`}>
           <span>SKIP</span>
         </button>
 

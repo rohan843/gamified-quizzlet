@@ -11,7 +11,7 @@ import LeaderboardView from "./pages/dashboard-page/LeaderboardView";
 import ProfileView from "./pages/dashboard-page/ProfileView";
 import FlashcardsView from "./pages/dashboard-page/FlashcardsView";
 import QuizPage from "./pages/quiz-page/QuizPage";
-import QuizPage from "./pages/quiz-end-page/QuizEnd";
+import QuizEnd from "./pages/quiz-end-page/QuizEnd";
 import Robot from "./components/Robot";
 
 const router = createBrowserRouter([

@@ -18,7 +18,20 @@ function DashboardPage({ streak, gold, lifelines }) {
     title: "Flashcard title",
     info: "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
   });
-  const [currentButton,setCurrentButton]=useState(null)
+  function initialValue(){
+    
+    if(window.location.pathname==="/dashboard/profile"){
+      return 1;
+    }else if( window.location.pathname==="/dashboard/leaderboard"){
+      return 2;
+    }else if( window.location.pathname==="/dashboard/flashcards"){
+      return 3;
+    }else{
+      return 0;
+    }
+  }
+  const [currentButton,setCurrentButton]=useState(initialValue())
+
   function onClickCurrentButton(val){
     setCurrentButton(val);
   }
