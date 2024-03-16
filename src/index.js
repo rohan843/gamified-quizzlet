@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WelcomePage from "./pages/welcome-page/WelcomePage";
 import LoginPage from "./pages/login-page/LoginPage";
 import SignUpPage from "./pages/signup-page/SignUpPage";
@@ -11,13 +10,17 @@ import ExploreView from "./pages/dashboard-page/ExploreView";
 import LeaderboardView from "./pages/dashboard-page/LeaderboardView";
 import ProfileView from "./pages/dashboard-page/ProfileView";
 import FlashcardsView from "./pages/dashboard-page/FlashcardsView";
-import QuizPage from "./pages/quiz-page/QuizPage"
-import QuizEnd from "./pages/quiz-end-page/QuizEnd";
+import QuizPage from "./pages/quiz-page/QuizPage";
+import Robot from "./components/Robot";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <WelcomePage/>,
+    element: <WelcomePage />,
+  },
+  {
+    path: "/robot",
+    element: <Robot />,
   },
   {
     path: "/login",
@@ -37,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "leaderboard",
-        element: <LeaderboardView/>,
+        element: <LeaderboardView />,
       },
       {
         path: "profile",
@@ -49,21 +52,18 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <ExploreView/>,
+        element: <ExploreView />,
       },
     ],
   },
   {
     path: "/quiz/:quiz_id",
-    element: <QuizPage/>,
+    element: <QuizPage />,
   },
   {
     path: "/quiz/:quiz_id/end",
     element: <QuizEnd/>,
   },
-
-
-
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
