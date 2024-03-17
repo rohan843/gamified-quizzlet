@@ -58,7 +58,6 @@ app.post('/login', async (req,res) => {
     }
 });
 
-
 app.listen(3001, async () => {
   await mongoose.connect(
     "mongodb+srv://gamified-quizzlet:hexacore@cluster0.jikcljx.mongodb.net/"
