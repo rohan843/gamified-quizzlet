@@ -1,45 +1,21 @@
+import { useSelector } from "react-redux";
 import Flashcard from "../../components/Flashcard";
 
 function FlashcardsView() {
+  const { flashcards } = useSelector((store) => store.user);
+  const flashcardsJSX = flashcards.map((element, index) => {
+    return (
+      <Flashcard
+        name={element.name}
+        text={element.text}
+        media={element.media}
+        key={index}
+        index={index}
+      />
+    );
+  });
   return (
-    <div className="w-full min-h-max flex flex-col p-10">
-      <Flashcard
-        onClick={() => alert("asdf")}
-        name="Operating Systems"
-        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in."
-        media="Image"
-      />
-      <Flashcard
-        onClick={() => alert("asdf")}
-        name="Operating Systems"
-        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in."
-        media="Image"
-      />
-      <Flashcard
-        onClick={() => alert("asdf")}
-        name="Operating Systems"
-        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in."
-        media="Image"
-      />
-      <Flashcard
-        onClick={() => alert("asdf")}
-        name="Operating Systems"
-        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in."
-        media="Image"
-      />
-      <Flashcard
-        onClick={() => alert("asdf")}
-        name="Operating Systems"
-        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in."
-        media="Image"
-      />
-      <Flashcard
-        onClick={() => alert("asdf")}
-        name="Operating Systems"
-        text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in."
-        media="Image"
-      />
-    </div>
+    <div className="w-full min-h-max flex flex-col p-10">{flashcardsJSX}</div>
   );
 }
 

@@ -32,8 +32,34 @@ const userSlice = createSlice({
       [2, "Lorem", 40, 26],
       [4, "Lorem", 40, 26],
     ],
+    flashcards: [
+      {
+        name: "Operating Systems",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in.",
+        media: "Image",
+        img: "https://picsum.photos/200/300",
+      },
+      {
+        name: "Operating Systems",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in.",
+        media: "Image",
+        img: "https://picsum.photos/200/300",
+      },
+      {
+        name: "Operating Systems",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero suscipit perferendis autem, earum maxime illum dolorem pariatur porro doloremque asperiores ipsum esse accusantium ad quasi at ex corporis quam in.",
+        media: "Image",
+        img: "https://picsum.photos/200/300",
+      },
+    ],
+    activeFlashcardIndex: null,
   },
-  reducers: {},
+  reducers: {
+    setActiveFlashcard(state, action) {
+      state.activeFlashcardIndex = action.payload;
+    },
+  },
 });
 
 export const userReducer = userSlice.reducer;
+export const { setActiveFlashcard } = userSlice.actions;
