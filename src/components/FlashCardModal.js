@@ -41,7 +41,7 @@ export default function FlashCardModal() {
                 <img
                   src={flashcard.img}
                   alt=""
-                  className="max-h-[200px] min-w-[200px]"
+                  className="max-h-[200px] min-w-[200px] object-cover"
                 ></img>
               </div>
               <div className="mt-4 bg-[#8D431A] border-[#643013] rounded-[24px] border-8">
